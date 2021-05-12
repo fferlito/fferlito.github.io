@@ -1,8 +1,8 @@
 ---
 layout: about
-title: about
+title: about me
 permalink: /
-description: Master student at the University of Groningen
+description: All great changes are preceded by chaos
 
 profile:
   align: right
