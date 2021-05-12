@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Decoding the Dead Sea Scrolls with Deep learning
-description: a project with a background image
+description: An analysis including line segmentation, character segmention and classification of the type of scroll
 img: /assets/img/dss.jpeg
 importance: 1
-category: work
+category: University
 ---
 
 Every project has a beautiful feature showcase page.

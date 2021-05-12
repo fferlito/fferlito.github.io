@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Raytracer
-description: C++ project to render scenes from json specifications
-img: /assets/img/dnaHD.png
-importance: 2
+title: Music genre classifier
+description: Deep learning models for music classification
+img: /assets/img/mel.png
+importance: 3
 category: University
 ---
 
