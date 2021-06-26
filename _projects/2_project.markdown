@@ -9,22 +9,22 @@ category: University
 
 This Raytracer program, written in C++, supports:
 
-*Full Phong Lighting Model
-*shadows
-*reflections
-*textures
-*super sampling
-*Cel-shader (a.k.a. Toon-shader)
-*Gooch shader
+* Full Phong Lighting Model
+* shadows
+* reflections
+* textures
+* super sampling
+* Cel-shader (a.k.a. Toon-shader)
+* Gooch shader
 
 The objects supported are:
 
-*sphere
-*triangle
-*quad
-*plane
-*cylinder (with caps)
-*triangle meshes
+* sphere
+* triangle
+* quad
+* plane
+* cylinder (with caps)
+* triangle meshes
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -45,7 +45,7 @@ The scenes to be rendered are read from a .json file, which contains the details
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/dnaHD.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/dnaHD.png' | relative_url }}" alt="" title="example image"/>
     </div>
 </div>
 <div class="caption">
@@ -56,7 +56,7 @@ The script also supports non-photorealistic shading, which are toon-shading and 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/dnaToon.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/dnaToon.png' | relative_url }}" alt="" title="example image"/>
     </div>
 </div>
 <div class="caption">
@@ -66,7 +66,7 @@ The script also supports non-photorealistic shading, which are toon-shading and 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/dnaGooch.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/dnaGooch.png' | relative_url }}" alt="" title="example image"/>
     </div>
 </div>
 <div class="caption">
