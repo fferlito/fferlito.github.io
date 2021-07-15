@@ -12,6 +12,9 @@ category: computer graphics
         <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/style.jpeg' | relative_url }}" alt="" title="example image"/>
     </div>
 </div>
+<div class="caption">
+
+</div>
 
 
 Neural networks have been very popular in the last years, especially in the field of computer vision (i.e. images classification tasks). In the last years, a new wave of artist is pushing their bundaries further, using techniques like <a href="https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html" target="blank">DeepDream</a>, <a href="https://arxiv.org/pdf/1508.06576.pdf" target="blank">style transfer</a> and <a href="https://distill.pub/2017/feature-visualization/" target="blank">feature visualization</a> to create artistic images and abstract visualizations.
