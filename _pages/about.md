@@ -15,6 +15,10 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I have studied in the field of Artificial Intelligence for the last 5 years, following my research interest about Deep Learning and Linguistics. Right now I'm finishing my Master thesis on Machine Translation, and as a side job I work as a Data Scientist. I would love to advance my understanding of the topic further, through PhD study with an experts in the field of Computational Linguistics. 
+
+I've been exploring and pushing the boundaries of machine learning, making it available to the masses by democratizing it. I'm very enthusiastic about bleeding-edge technology and love to think about the new algorithms of tomorrow 🛠 
+
+My goal is to make technology usable: something that can make a difference in our planet 🌍🌟
 
 
+My expertise lies predominantly in Artificial Intelligence, Computer Vision and NLP. The journey of learning never ceases, but you do gain a couple of milestones: check them out in my <a href="https://fferlito.github.io/projects/" target="blank">project page</a> 💪🏼 
