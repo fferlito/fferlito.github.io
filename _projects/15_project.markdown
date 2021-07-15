@@ -7,19 +7,29 @@ importance: 1
 category: computer graphics
 ---
 
-Neural networks have been very popular in the last years for computer vision task, like images classification. In the last years, a new wave of artist is pushing their bundaries further, using techniques like <a href="https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html" target="blank">DeepDream</a>, <a href="https://arxiv.org/pdf/1508.06576.pdf" target="blank">style transfer</a> and <a href="https://distill.pub/2017/feature-visualization/" target="blank">feature visualization</a>.
-
-All these technologies are based on the same intuition. Neural networks can interpret images as they store some abstract representation in their internal layers, called features or filters. Once we feed an image to a network, each pixel will contribute to the activation of certain filters, leading to a certain prediction. We can also use these representation to describe some properties (a.k.a. style) that we want to optimize in a picture. This optimization is possible as the activations each filter are differentiable with respect to each input: this means that we can tweak the input using the gradient descent algorithm in an iterative way.
-
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/style.jpeg' | relative_url }}" alt="" title="example image"/>
     </div>
 </div>
+
+
+Neural networks have been very popular in the last years, especially in the field of computer vision (i.e. images classification tasks). In the last years, a new wave of artist is pushing their bundaries further, using techniques like <a href="https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html" target="blank">DeepDream</a>, <a href="https://arxiv.org/pdf/1508.06576.pdf" target="blank">style transfer</a> and <a href="https://distill.pub/2017/feature-visualization/" target="blank">feature visualization</a> to create artistic images and abstract visualizations.
+
+All these technologies are based on the same intuition. Neural networks are formed stacking layers of artifical neurons. They can interpret the input images as they store some abstract representation in these internal layers, which we call features, filters or kernels. Once we feed an image to a network, each pixel will contribute to the activation of certain filters, leading to a certain prediction. In a different setting, we can also use these representation to describe some properties (a.k.a. style) that we want to optimize in a picture. This optimization is possible as the activations each filter are *differentiable* with respect to the input: this means that we can tweak the input using the gradient descent (or other algorithms) in an iterative way. An example of such application is called * neural style transfer*,  an optimization technique used to take two images—a content image and a style reference image (such as an artwork by a famous painter)—and blend them together so the output image looks like the content image, but “painted” in the style of the style reference image, as shown in the examples below. 
+
+
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/style2d.png' | relative_url }}" alt="" title="example image"/>
+    </div>
+</div>
 <div class="caption">
-    Example 1
+    Example of style transfer, taken from the  <a href="https://arxiv.org/pdf/1508.06576.pdf" target="blank">original paper</a>
 </div>
 
+Changing the parametrization of the optimization problem can change drastically the results of the neural network, despite the other components (i.e. loss function) remains the same. 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
