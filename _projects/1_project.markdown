@@ -4,14 +4,19 @@ title: Decoding the Dead Sea Scrolls with Deep learning
 description: An analysis including line segmentation, character segmention and classification of the type of scroll
 img: /assets/img/dss.jpeg
 importance: 1
-category: University
+category: deep learning
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+The field of Optical Character Recognition (OCR) has made big improvements over the last years , yielding very high recognition rates, especially when dealing with handwritten characters. This analysis allows to convert typed and handwritten characters into digital format, so that they can be stored electronically and further analyzed on a computer.  However, this still poses some problems, since there is a big variability in the style, both between different writers, and within the same writer.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+The task of character recognition becomes more challenging when dealing with historical handwritten documents. The field where these manuscripts are studied is called paleography (a word with Greek roots meaining παλαιός, palaiós, "old", and γράφειν, gráphein, "to write"), which focus on deciphering, reading, and dating historical manuscripts, as well as the understanding of the cultural context of writing. Of particular interest is the dating these manuscripts, which allows to understand the different writing styles of these documents according to the period in which they are written. A traditional way to do this is using a radiocarbon dating analysis, which is a method to figure out the period of an object that contains organic material, using the properties of radiocarbon. This method was used for example to date some parts of the Dead Sea Scrolls.  This is  a  collection  of  ancient  manuscripts  with   historical,  religious,  and linguistic significance. This method yields good results, however it requires a lot of hand labour and knowledge in the field.
+
+In this project, I developed with some course mates a novel approach for style classification of historical documents, applied to the Dead Sea Scrolls (DSS). Using an algorithm to date historical documents offers many advantages, from the speed of running the analysis, to the cost of doing it (doing a carbon analysis requires a chemical laboratory and reagents, which not everybody can access). Most of the texts of the DSS collection use Hebrew, with some written in Aramaic and a few in Greek.  For this analysis, we only use Hebrew characters. The Dead Sea Scrolls collection exhibits writing styles from three different periods: Archaic, Hasmonean, and Herodian. 
+
+
+In order to understand the style of writing of a scroll, we have to solve two different tasks: the first is the extraction of the characters from the scrolls. Once the characters are obtained, these can be used as features for the style classification, as shown by previous research. The reason of this is that each writer has a different writing style, which varies from the way a character is written, to the angle these characters have compared to the line on the page. 
+
+The first task (the character extraction) can be subdivided in three main tasks: first, the line segmentation, in which each line of a document is extracted; second, the character segmentation, which allows to extract the individual characters from the results of the first step; lastly, the character recognition, that allows us to store the scrolls into digital format.
 
     ---
     layout: page
@@ -22,42 +27,14 @@ To give your project a background in the portfolio page, just add the img tag to
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/1.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/line.jpg' | relative_url }}" alt="" title="Example of line segmentation"/>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/3.jpg' | relative_url }}" alt="" title="example image"/>
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/5.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/char_seg_result.png' | relative_url }}" alt="" title="Example of character segmentation"/>
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/5.jpg' | relative_url }}" alt="" title="example image"/>
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal it's glory in the next row of images.
-
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/6.jpg' | relative_url }}" alt="" title="example image"/>
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/11.jpg' | relative_url }}" alt="" title="example image"/>
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    Caption photos easily.
 </div>
 
 
