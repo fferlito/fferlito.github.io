@@ -4,7 +4,7 @@ title: brew expert
 description: An android application implementing a beer expert system with CLIPS
 img: /assets/img/beer.jpg
 importance: 4
-category: University
+category: apps
 ---
 The BeerExpert is a project created to include CLIPS to Android, encapsulating the knowledge elicited from a beer brewer.
 

@@ -4,7 +4,7 @@ title: Generating cat faces with GANs
 description: Generative Adversarial Network (GAN) for generation of cat images
 img: /assets/img/cats.png
 importance: 4
-category: University
+category: deep learning
 ---
 
 Generative Adversarial Network (GAN) is a class of unsupervised machine learning systems in which two different neural networks compete in a game (such as a zero-sum game) in order to train each other. These two are called generator and discriminator. The former one has the goal to create as output samples with the same distribution of the training data, taking as input a vector from a random distribution. The latter one has to judge whether its input is a real image or a generated one, thus it will have two classes as output (real or fake).

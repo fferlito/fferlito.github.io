@@ -4,7 +4,7 @@ title: Raytracer
 description: C++ project to render scenes from json specifications
 img: /assets/img/dnaHD.png
 importance: 2
-category: University
+category: computer graphics
 ---
 
 This Raytracer program, written in C++, supports:

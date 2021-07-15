@@ -4,7 +4,7 @@ title: Music genre classifier
 description: Deep learning models for music classification
 img: /assets/img/mel.png
 importance: 3
-category: University
+category: deep learning
 ---
 
 Different architectures to classify music files based on genre from the GTZAN music corpus, namely:

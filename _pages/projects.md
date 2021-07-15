@@ -4,7 +4,7 @@ title: projects
 permalink: /projects/
 description: A growing collection of my cool projects.
 nav: true
-display_categories: [University, deep learning, NLP]
+display_categories: [deep learning, NLP, computer graphics, apps]
 horizontal: false
 ---
 <div class="projects">
