@@ -34,20 +34,20 @@ Neural style transfer is used to take two images, a content image and a style re
     </div>
 </div>
 <div class="caption">
-    Example of style transfer, taken from the  <a href="https://arxiv.org/pdf/1508.06576.pdf" target="blank">original paper</a>. In the top left image, there is the *content*. In the three other images, the output for three different *styles* is shown. 
+    Example of style transfer, taken from the  <a href="https://arxiv.org/pdf/1508.06576.pdf" target="blank">original paper</a>. In the top left image, there is the content. In the three other images, the output for three different styles is shown. 
 </div>
 
-The main architecture requried for style transfer is a pretraiend convolutional neural network. Then, the optimization procedure is computed using three components: (i) a content image, (ii) a style image, (iii) and the input image, which is the one that is generated as final output. What allows the network to generate these beutiful stylized images is at the core of the optimization process: the loss function. Let's discuss them in detail to understain better what's going on.
+The main architecture requried for style transfer is a pretrained convolutional neural network. Then, the optimization procedure is computed using three components: (i) a content image, (ii) a style image, (iii) and the input image, which is the one that is generated as final output. What allows the network to generate these beutiful stylized images is at the core of the optimization process: the loss function. Let's discuss them in detail to understain better what's going on.
 
 ### A matter of loss
 Neural style transfer is based on two loss functions: the **content loss** and the **style loss**. The first ensures that the activations of the higher layers of the neural network activates in the same way between the content image and the generated image. The other loss allows the correlation of the activation between the layers on the networks are similar between the style image and the generated image. Let's break each of the functions down.
 
 #### Content loss function
-The content loss function allows that what is represented in the content image is preserved in the generated image. It does so based on the pattern of activations of the last layers of the model. The different layers of CNNS captures patterns with different levels of detail: the first layers focus more on the individual pixels, and they learn small patterns like lines or curves. Deeper layers of the network learns more abstract shapes.  Below, we can see the different filters when the image of a car is fed to a CNN.
+The content loss function allows that what it's represented in the content image to be preserved in the generated image. It does so based on the pattern of activations of the last layers of the model. The different layers of CNNS captures patterns with different levels of detail: the first layers focus more on the individual pixels, and they learn small patterns like lines or curves. Deeper layers of the network learns more abstract shapes.  Below, we can see how the different filters activate when the image of a face is fed to a CNN.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/cnn_layers.png' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/cnn_layers.jpeg' | relative_url }}" alt="" title="example image"/>
     </div>
 </div>
 <div class="caption">
