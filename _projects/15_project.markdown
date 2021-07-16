@@ -53,6 +53,10 @@ The content loss function allows that what it's represented in the content image
 <div class="caption">
     Filters of the CNN at different level of depth learns features with different complexity: first layers learnt basic primitives (edges and colours). Deeper filters learnt textures and patterns. The final layers contains complex features, which can resemble objects from the training data. 
 </div>
+
+Therefore we will use the pattern of activation of the last layer of the CNN to define this loss function. Let $$ A^l_{ij}^(I) $$ be the activation of layer l, at the ith feature map and the jth position. Then the content loss function is defined as:
+
+
 #### Style loss function
 
 #### Final loss 
