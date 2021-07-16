@@ -56,11 +56,11 @@ The content loss function allows that what it's represented in the content image
 
 Therefore we will use the pattern of activation of the last layer of the CNN to define this loss function. Let A^L^_ij_ be the activation of layer l, at the ith feature map and the jth position. Then the content loss function is defined as:
 
-<div class="row">
+<p align="center">
     <div class="col-sm-12 mt-3 mt-md-0">
-        <img src="https://latex.codecogs.com/png.image?\dpi{200}&space;L_{content}&space;=&space;\frac{1}{2}&space;\sum_{ij}^{}&space;(A^l_{ij}&space;(g)&space;-&space;A^l_{ij}&space;(c))^2&space;&space;&space;" title="L_{content} = \frac{1}{2} \sum_{ij}^{} (A^l_{ij} (g) - A^l_{ij} (c))^2 " />
+        <img src="https://latex.codecogs.com/png.image?\dpi{300}&space;L_{content}&space;=&space;\frac{1}{2}&space;\sum_{ij}^{}&space;(A^l_{ij}&space;(g)&space;-&space;A^l_{ij}&space;(c))^2&space;&space;&space;" title="L_{content} = \frac{1}{2} \sum_{ij}^{} (A^l_{ij} (g) - A^l_{ij} (c))^2 " />
     </div>
-</div>
+</p>
 
 
 #### Style loss function
