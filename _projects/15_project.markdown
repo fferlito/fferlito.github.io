@@ -54,18 +54,35 @@ The content loss function allows that what it's represented in the content image
     Filters of the CNN at different level of depth learns features with different complexity: first layers learnt basic primitives (edges and colours). Deeper filters learnt textures and patterns. The final layers contains complex features, which can resemble objects from the training data. 
 </div>
 
-Therefore we will use the pattern of activation of the last layer of the CNN to define this loss function. Let A^L^_ij_ be the activation of layer l, at the ith feature map and the jth position. Then the content loss function is defined as:
+Therefore we will use the pattern of activation of the last layer of the CNN to define this loss function. Let *A* be the activation of a layer *l*, at the *i*-th feature map and the *j*-th position. Then the content loss function, based on the generated image *g* and the content image *c* is defined as:
 
 <p align="center">
-    <div class="col-sm-12 mt-3 mt-md-0">
-        <img src="https://latex.codecogs.com/png.image?\dpi{300}&space;L_{content}&space;=&space;\frac{1}{2}&space;\sum_{ij}^{}&space;(A^l_{ij}&space;(g)&space;-&space;A^l_{ij}&space;(c))^2&space;&space;&space;" title="L_{content} = \frac{1}{2} \sum_{ij}^{} (A^l_{ij} (g) - A^l_{ij} (c))^2 " />
-    </div>
+        <img src="https://latex.codecogs.com/png.image?\dpi{150}&space;L_{content}&space;=&space;\frac{1}{2}&space;\sum_{ij}^{}&space;(A^l_{ij}&space;(g)&space;-&space;A^l_{ij}&space;(c))^2&space;&space;&space;" title="L_{content} = \frac{1}{2} \sum_{ij}^{} (A^l_{ij} (g) - A^l_{ij} (c))^2 " />
 </p>
 
+In a nutshell, this function takes the *root mean squared error* between the activation produced by the two images. 
 
 #### Style loss function
 
 #### Final loss 
+The final loss is defines as a weighted sum of the two losses defined above:
+
+
+<p align="center">
+	<img src="https://latex.codecogs.com/png.image?\dpi{150}&space;L&space;=&space;\alpha&space;L_{content}&space;&plus;&space;\beta&space;L_{style}&space;&space;" title="L = \alpha L_{content} + \beta L_{style} " />
+</p>
+
+Where **α** and **β** are two hyper-parameter decided by the user. Controlling these two parameters allow to control the amount of style and content injected in the generated image. In the examples below the effect of these two parameters is shown.
+
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/alpha_beta.png' | relative_url }}" alt="" title="example image"/>
+    </div>
+</div>
+<div class="caption">
+    Example of style transfer for different values of  α and β, taken from the  <a href="https://arxiv.org/pdf/1508.06576.pdf" target="blank">original paper</a>. In the left, the ratio α/β is the smallest: the generated image contains mostly the pattern of the style. As we go to the right, the ratio become smaller, and the pattern of the content image appears more clear.  
+</div>
 
 Changing the parametrization of the optimization problem can change drastically the results of the neural network, despite the other components (i.e. loss function) remains the same. 
 
