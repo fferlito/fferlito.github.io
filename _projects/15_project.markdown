@@ -75,6 +75,9 @@ Defining the style loss function requires some extra steps than the previous los
 <img src="https://latex.codecogs.com/png.image?\dpi{150}&space;G^l_{ij}&space;(I)&space;=&space;\sum_{k}^{}&space;A^l_{ik}&space;(I)A^l_{jk}&space;(I)&space;" title="G^l_{ij} (I) = \sum_{k}^{} A^l_{ik} (I)A^l_{jk} (I) " />
 </p>
 
+Where *w* is a weight given to each layer during the loss computation and *M* is a hyperparameter that depends on the size of the layer *l*. 
+
+Even though the formulas above seems complex, the idea behind is very simple. The goal is to compute two *style matrices*, one for the style image and one for the generated image. Then, the loss is defined as the root mean square difference between the two style matrices. The style matrix (also known as Gram matrix) captures the distribution of features maps in a given layer. Minimizing the style loss between the two images, we are trying to match the distribution of features between the two images. 
 
 #### Final loss 
 The final loss is defines as a weighted sum of the two losses defined above:
