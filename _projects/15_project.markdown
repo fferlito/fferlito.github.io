@@ -21,9 +21,12 @@ Neural networks have been very popular in the last years, especially in the fiel
 
 All these technologies are based on the same intuition. Neural networks are formed stacking layers of artifical neurons. They can interpret the input images as they store some abstract representation in these internal layers, which we call features, filters or kernels. Once we feed an image to a network, each pixel will contribute to the activation of certain filters, leading to a certain prediction. We can use these representation in a different way: to describe some properties (a.k.a. style) that we want to optimize in a picture. This optimization is possible as the activations each filter are *differentiable* with respect to the input: this means that we can tweak the input using the gradient descent (or other algorithms) in an iterative way. 
 
-An example of such application is called *neural style transfer*,  an optimization technique used to take two images—a content image and a style reference image (such as an artwork by a famous painter)—and blend them together so the output image looks like the content image, but “painted” in the style of the style reference image, as shown in the examples below. 
+An example of such application is called *neural style transfer*,  an optimization technique used to achieve image stylization in a non-photorealistic way. In the next sections, the basic concept of style transfer is described. Following, an extension for applying this technique on 3d models is given.
 
 
+## Neural style transfer
+
+Neural style transfer is used to take two images, a content image and a style reference image (such as an artwork by a famous painter), and blend them together so the output image looks like the content image, but “painted” in the style of the style reference image. Some examples of stylized images are shown below.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -34,7 +37,21 @@ An example of such application is called *neural style transfer*,  an optimizati
     Example of style transfer, taken from the  <a href="https://arxiv.org/pdf/1508.06576.pdf" target="blank">original paper</a>. In the top left image, there is the *content*. In the three other images, the output for three different *styles* is shown. 
 </div>
 
+The main architecture requried for style transfer is a pretraiend convolutional neural network. Then, the otpimization procedure is computed using three components: (i) a content image, (ii) a style image, (iii) and the input image, which is the one that is generated as final output. What allows the network to generate these beutiful stylized images is at the core of the otpimization process: the loss function. Let's discuss them in detail to understain better what's going on.
+
+### A matter of loss
+Neural style transfer is based on two loss functions: the **content loss** and the **style loss**. The first ensures that the activations of the higher layers of the neural network activates in the same way between the content image and the generated image. The other loss allows the correlation of the activation between the layers on the networks are similar between the style image and the generated image. Let's break each of the functions down.
+
+#### Content loss function
+
+### Style loss function
+
+### Final loss 
+
 Changing the parametrization of the optimization problem can change drastically the results of the neural network, despite the other components (i.e. loss function) remains the same. 
+
+## 3D Neural style transfer
+
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
