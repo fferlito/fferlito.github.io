@@ -17,9 +17,9 @@ category: computer graphics
 </div>
 
 
-Neural networks have been very popular in the last years, especially in the field of computer vision (i.e. images classification tasks). In the last years, a new wave of artist is pushing their bundaries further, using techniques like <a href="https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html" target="blank">DeepDream</a>, <a href="https://arxiv.org/pdf/1508.06576.pdf" target="blank">style transfer</a> and <a href="https://distill.pub/2017/feature-visualization/" target="blank">feature visualization</a> to create artistic images and abstract visualizations.
+Neural networks have been very popular in the last years, especially in the field of computer vision, where they achieved remarkable results in tasks like image classification. In the last years, a new wave of artist is pushing their bundaries further, using techniques like <a href="https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html" target="blank">DeepDream</a>, <a href="https://arxiv.org/pdf/1508.06576.pdf" target="blank">style transfer</a> and <a href="https://distill.pub/2017/feature-visualization/" target="blank">feature visualization</a> to create artistic images and abstract visualizations.
 
-All these technologies are based on the same intuition. Neural networks are formed stacking layers of artifical neurons. They can interpret the input images as they store some abstract representation in these internal layers, which we call features, filters or kernels. Once we feed an image to a network, each pixel will contribute to the activation of certain filters, leading to a certain prediction. We can use these representation in a different way: to describe some properties (a.k.a. style) that we want to optimize in a picture. This optimization is possible as the activations each filter are *differentiable* with respect to the input: this means that we can tweak the input using the gradient descent (or other algorithms) in an iterative way. 
+All these technologies are based on the same intuition. Convolutional neural networks are formed stacking layers of *artifical neurons*. These layers can interpret the input images as they store some abstract representation in their parameters (called *weights*) using an operation called *convolution*. These representation are stored in layers that we call *feature maps*. Once we feed an image to a network, each pixel will contribute to the activation of certain feature map, which in turn will lead to a certain prediction. We can use these representation in a different way: to describe some properties (a.k.a. style) that we want to optimize in a picture. This optimization is possible as the activations each filter are *differentiable* with respect to the input: this means that we can tweak the input using the gradient descent (or other algorithms) in an iterative way. 
 
 An example of such application is called *neural style transfer*,  an optimization technique used to achieve image stylization in a non-photorealistic way. In the next sections, the basic concept of style transfer is described. Following, an extension for applying this technique on 3d models is given.
 
@@ -54,7 +54,7 @@ The content loss function allows that what it's represented in the content image
     Filters of the CNN at different level of depth learns features with different complexity: first layers learnt basic primitives (edges and colours). Deeper filters learnt textures and patterns. The final layers contains complex features, which can resemble objects from the training data. 
 </div>
 
-Therefore we will use the pattern of activation of the last layer of the CNN to define this loss function. Let *A* be the activation of a layer *l*, at the *i*-th feature map and the *j*-th position. Then the content loss function, based on the generated image *g* and the content image *c* is defined as:
+Therefore we will use the pattern of activation of the last layer of the CNN to define this loss function. Let *A* be the activation of a layer *l*, at the *i*-th feature map and the *j*-th position. Then the content loss function, based on the generated image *g* and the content image *c*, is defined as:
 
 <p align="center">
         <img src="https://latex.codecogs.com/png.image?\dpi{150}&space;L_{content}&space;=&space;\frac{1}{2}&space;\sum_{ij}^{}&space;(A^l_{ij}&space;(g)&space;-&space;A^l_{ij}&space;(c))^2&space;&space;&space;" title="L_{content} = \frac{1}{2} \sum_{ij}^{} (A^l_{ij} (g) - A^l_{ij} (c))^2 " />
@@ -63,6 +63,18 @@ Therefore we will use the pattern of activation of the last layer of the CNN to 
 In a nutshell, this function takes the *root mean squared error* between the activation produced by the two images. 
 
 #### Style loss function
+Defining the style loss function requires some extra steps than the previous loss. In order to extract the style from the CNN, we make use of all the layers available. We then define the *style information* as the amount of correlation between the features maps in a given layer. The loss is then defined as the difference in correlation between the feature maps activated by the generated image and the style image:
+
+<p align="center">
+<img src="https://latex.codecogs.com/png.image?\dpi{150}&space;L_{style}&space;=&space;\sum_{l}^{}&space;w^l&space;L^l_{style}&space;\qquad&space;where&space;\\&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;" title="L_{style} = \sum_{l}^{} w^l L^l_{style} \qquad where \\ " />
+</p>
+<p align="center">
+<img src="https://latex.codecogs.com/png.image?\dpi{150}&space;L^l_{style}&space;=&space;\frac{1}{M^l}&space;\sum_{ij}^{}&space;(G^l_{ij}&space;(s)&space;-&space;G^l_{ij}&space;(g))^2&space;\qquad&space;where&space;\\&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;" title="L^l_{style} = \frac{1}{M^l} \sum_{ij}^{} (G^l_{ij} (s) - G^l_{ij} (g))^2 \qquad where \\ " />
+</p>
+<p align="center">
+<img src="https://latex.codecogs.com/png.image?\dpi{150}&space;G^l_{ij}&space;(I)&space;=&space;\sum_{k}^{}&space;A^l_{ik}&space;(I)A^l_{jk}&space;(I)&space;" title="G^l_{ij} (I) = \sum_{k}^{} A^l_{ik} (I)A^l_{jk} (I) " />
+</p>
+
 
 #### Final loss 
 The final loss is defines as a weighted sum of the two losses defined above:
@@ -81,7 +93,7 @@ Where **α** and **β** are two hyper-parameter decided by the user. Controlling
     </div>
 </div>
 <div class="caption">
-    Example of style transfer for different values of  α and β, taken from the  <a href="https://arxiv.org/pdf/1508.06576.pdf" target="blank">original paper</a>. In the left, the ratio α/β is the smallest: the generated image contains mostly the pattern of the style. As we go to the right, the ratio become smaller, and the pattern of the content image appears more clear.  
+    Example of style transfer for different values of  α and β, taken from the  <a href="https://arxiv.org/pdf/1508.06576.pdf" target="blank">original paper</a>. In the left, the ratio α/β is the smallest: the generated image contains mostly the pattern of the style. As we go to the right, the ratio become bigger, and the pattern of the content image appears more clear.  
 </div>
 
 Changing the parametrization of the optimization problem can change drastically the results of the neural network, despite the other components (i.e. loss function) remains the same. 
