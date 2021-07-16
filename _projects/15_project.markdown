@@ -46,7 +46,7 @@ Neural style transfer is based on two loss functions: the **content loss** and t
 The content loss function allows that what it's represented in the content image to be preserved in the generated image. It does so based on the pattern of activations of the last layers of the model. The different layers of CNNS captures patterns with different levels of detail: the first layers focus more on the individual pixels, and they learn small patterns like lines or curves. Deeper layers of the network learns more abstract shapes.  Below, we can see how the different filters activate when the image of a face is fed to a CNN.
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm-12 mt-3 mt-md-0">
         <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/cnn_layers.jpeg' | relative_url }}" alt="" title="example image"/>
     </div>
 </div>
