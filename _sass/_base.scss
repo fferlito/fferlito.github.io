@@ -333,7 +333,10 @@ footer.sticky-bottom {
         width: 100%;
       }
       .card-title {
-        color: $black-color;
+        color: $green-color-dark;
+      }
+      .h2, h2 {
+          font-size: 1.3rem;
       }
     }
   }
