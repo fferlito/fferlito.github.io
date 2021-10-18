@@ -2,7 +2,8 @@
 layout: about
 title: about me
 permalink: /
-description: 
+description:
+nav: true
 
 profile:
   align: right
