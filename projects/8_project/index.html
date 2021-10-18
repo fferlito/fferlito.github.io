@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Federico  Ferlito | blank</title>
+<title>Federico  Ferlito | Generating cat faces with GANs</title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/8_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -94,8 +94,6 @@
           
           
           
-          
-          
           <li class="nav-item ">
               <a class="nav-link" href="/">
                 about
@@ -136,56 +134,33 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>My blog</h1>
-    <h2>Fun and intersting facts</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Generating cat faces with GANs</h1>
+    <p class="post-description">Generative Adversarial Network (GAN) for generation of cat images</p>
+  </header>
+
+  <article>
+    <p>Generative Adversarial Network (GAN) is a class of unsupervised machine learning systems in which two different neural networks compete in a game (such as a zero-sum game) in order to train each other. These two are called generator and discriminator. The former one has the goal to create as output samples with the same distribution of the training data, taking as input a vector from a random distribution. The latter one has to judge whether its input is a real image or a generated one, thus it will have two classes as output (real or fake).</p>
+
+<p>In the context of Deep learning, many variants of GAN include convolutional layers to increase the capacity of these models for unsupervised tasks. This project contains some of these implementations. These include DCGAN, WGAN and ProGAN.The task for these networks is to learn to generate cats’ faces, using a collection of open source data-sets. The final dataset can be found at this link: https://github.com/Ferlix/Cat-faces-dataset . To get more insights on the quality and diversity of the generated images, two different metrics are used, namely Inception Score (IS) and Frechet Inception Distance (FID).</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/cats.png" alt="" title="example image" />
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/wcats.png" alt="" title="example image" />
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/dccats.png" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    Examples of generated cats using different GAN models. On the left, there's some images made with proGAN. In the middle, images are made with W-GAN. On the right, the cats are made with DC-GAN.
+</div>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/twitter/">a post with twitter</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>an example of a blog post with twitter</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">December 22, 2018</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
-    
-  </ul>
-
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
+  </article>
 
 </div>
 

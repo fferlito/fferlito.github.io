@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Federico  Ferlito | blank</title>
+<title>Federico  Ferlito | Raytracer</title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/2_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -94,8 +94,6 @@
           
           
           
-          
-          
           <li class="nav-item ">
               <a class="nav-link" href="/">
                 about
@@ -136,56 +134,83 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>My blog</h1>
-    <h2>Fun and intersting facts</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Raytracer</h1>
+    <p class="post-description">C++ project to render scenes from json specifications</p>
+  </header>
+
+  <article>
+    <p>This Raytracer program, written in C++, supports:</p>
+
+<ul>
+  <li>Full Phong Lighting Model</li>
+  <li>shadows</li>
+  <li>reflections</li>
+  <li>textures</li>
+  <li>super sampling</li>
+  <li>Cel-shader (a.k.a. Toon-shader)</li>
+  <li>Gooch shader</li>
+</ul>
+
+<p>The objects supported are:</p>
+
+<ul>
+  <li>sphere</li>
+  <li>triangle</li>
+  <li>quad</li>
+  <li>plane</li>
+  <li>cylinder (with caps)</li>
+  <li>triangle meshes</li>
+</ul>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/ss.png" alt="" title="example image" />
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/toon.png" alt="" title="example image" />
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/texture.png" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    Some examples of rendered scenes. On the left, some sphere rendered with the Phong lighting model. In the middle, the same scene is rendered with the Toon-shader. On the right right, a sphere is rendered with a texture.
+</div>
+
+<p>The scenes to be rendered are read from a .json file, which contains the details of each model to be rendered. Using some additional scripts, it’s possible to render more complex scenes. For example, below there is a render of a DNA helix, with some H2O molecules floating around in random positions.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/dnaHD.png" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    A scene showing a DNA helix and H2O molecules. 
+</div>
+
+<p>The script also supports non-photorealistic shading, which are toon-shading and cell-shading, as shown in some example images below.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/dnaToon.png" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    A scene showing a DNA helix and H2O molecules, rendered with Toon shading. 
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/dnaGooch.png" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    A scene showing a DNA helix and H2O molecules, rendered with the non-photorealistic Gooch shading. 
+</div>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/twitter/">a post with twitter</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>an example of a blog post with twitter</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">December 22, 2018</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
-    
-  </ul>
-
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
+  </article>
 
 </div>
 

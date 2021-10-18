@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Federico  Ferlito | blank</title>
+<title>Federico  Ferlito | Detecting Machine Translated Text using BERT</title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/11_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -94,8 +94,6 @@
           
           
           
-          
-          
           <li class="nav-item ">
               <a class="nav-link" href="/">
                 about
@@ -136,56 +134,19 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>My blog</h1>
-    <h2>Fun and intersting facts</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Detecting Machine Translated Text using BERT</h1>
+    <p class="post-description">using the Opensubtitles corpus</p>
+  </header>
 
+  <article>
+    <p>Machine translation has seen massive improvements over recent years. Especially supervised models are coming ever closer to human parity. Free tools like Google Translate or Deepl allow people to achieve these levels of translations easily, without requiring a human expert. This raises concerns due to the ease of translating and spreading things like ‘fake news’.</p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/twitter/">a post with twitter</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>an example of a blog post with twitter</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">December 22, 2018</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
-    
-  </ul>
+<p>In contrast to corpora in machine translation that often use crawled news like WMT2014, the novel idea of using subtitles is presented. In this project, translated subtitle sentences are classified to find out if they are human or machine translated. Subtitles taken from the Opensubtitles corpus are translated from Italian to English and Dutch to English. BERT-models of different sizes are fine-tuned for this classification task on the respective language directions.</p>
 
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<p>Results indicate that classification was more successful for the Dutch to English direction compared to the Italian to English, with some improvements seen in larger BERT models. Nevertheless, the paper presents a promising and novel direction in machine translation classification, with several ideas for future explorations.</p>
 
-
+  </article>
 
 </div>
 

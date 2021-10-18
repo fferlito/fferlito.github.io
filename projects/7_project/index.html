@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Federico  Ferlito | blank</title>
+<title>Federico  Ferlito | Music genre classifier</title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/7_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -94,8 +94,6 @@
           
           
           
-          
-          
           <li class="nav-item ">
               <a class="nav-link" href="/">
                 about
@@ -136,56 +134,59 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>My blog</h1>
-    <h2>Fun and intersting facts</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Music genre classifier</h1>
+    <p class="post-description">Deep learning models for music classification</p>
+  </header>
+
+  <article>
+    <p>Different architectures to classify music files based on genre from the GTZAN music corpus, namely:</p>
+
+<ul>
+  <li>Convolutional Neural Network (CNN)</li>
+  <li>Recurrant Neural Network (RNN)</li>
+  <li>Inception V3</li>
+  <li>MobileNet V2</li>
+</ul>
+
+<p>(Implementated with Tensorflow)</p>
+
+<h3 id="dataset">Dataset</h3>
+
+<p>In the GTZAN music corpus there’s 10 genres with 100 songs each (1000 in total): 80% of it was used during the training phase (800 images), and 20% for testing (200 images). After the split, each song of 30 seconds is split in chunks of 10 seconds (resulting in 2400 and 600 training and testing samples).</p>
+
+<p>Dataset can be downlaoded here: http://marsyas.info/downloads/datasets.html</p>
+
+<h3 id="audio-augmentation">Audio augmentation</h3>
+
+<p>To increase further the amount of data, some augmentation were done on the audio files. For each song chunk, we applied:</p>
+
+<ul>
+  <li>Add light random noise in the wave form</li>
+  <li>Add intense random noise in the wave form</li>
+  <li>Increase randomly pitch (2% at most)</li>
+</ul>
+
+<h3 id="audio-features-extracted">Audio features extracted</h3>
+
+<p>For exctracting the audio features, the library librosa was used.</p>
+
+<p>Mel-frequency spectrogram as images of size 512x512 (in black and white)</p>
+
+<p>Combination of Mel-frequency spectogram, spectral centroid and spectral contrast stacked as images of size 512x512</p>
+
+<p>&lt;/div&gt;</p>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/spectro.png" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    Example of Mel-frequency Spectrograms
+</div>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/twitter/">a post with twitter</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>an example of a blog post with twitter</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">December 22, 2018</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
-    
-  </ul>
-
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
+  </article>
 
 </div>
 
